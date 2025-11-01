@@ -4,7 +4,7 @@ import Internal from "@/components/internal"
 import { ThemedText } from "@/components/themed-text"
 import { ThemedView } from "@/components/themed-view"
 
-export default function TabTwoScreen() {
+export default function ComponentsScreen() {
 	return (
 		<ThemedView style={styles.titleContainer}>
 			<Internal />
