@@ -1,20 +1,13 @@
-import { Button, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
+import Internal from "@/components/internal";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 
 export default function TabTwoScreen() {
 	return (
 		<ThemedView style={styles.titleContainer}>
-			<ThemedText type="title">
-				Componentes Internos
-			</ThemedText>
-			<View>
-				<Button
-					title="Botão"
-					onPress={() => { }}
-				/>
-			</View>
+			<Internal />
 			<ThemedText type="title">
 				Componentes Externos
 			</ThemedText>
