@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native"
 
-import Internal from "@/components/internal";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
+import Internal from "@/components/internal"
+import { ThemedText } from "@/components/themed-text"
+import { ThemedView } from "@/components/themed-view"
 
 export default function TabTwoScreen() {
 	return (
@@ -14,7 +14,7 @@ export default function TabTwoScreen() {
 			<View>				
 			</View>
 		</ThemedView>
-	);
+	)
 }
 
 const styles = StyleSheet.create({
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		gap: 8,
 	},
-});
+})
