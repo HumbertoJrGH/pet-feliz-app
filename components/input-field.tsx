@@ -15,11 +15,11 @@ export function InputField({ icon, iconPosition = "right", style, ...props }: In
 				placeholderTextColor="#9BA1A6"
 				{...props}
 			/>
-			{icon && (
+			{icon && 
 				<View style={[styles.iconContainer, iconPosition === "left" && styles.iconLeft]}>
 					<MaterialIcons name={icon} size={24} color="#90C695" />
 				</View>
-			)}
+			}
 		</View>
 	)
 }

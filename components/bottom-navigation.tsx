@@ -18,7 +18,7 @@ export function BottomNavigation({ activeTab = "home", onTabPress }: BottomNavig
 
 	return (
 		<View style={styles.container}>
-			{tabs.map((tab) => (
+			{tabs.map((tab) => 
 				<TouchableOpacity
 					key={tab.id}
 					style={styles.tab}
@@ -34,7 +34,7 @@ export function BottomNavigation({ activeTab = "home", onTabPress }: BottomNavig
 					</View>
 					{activeTab === tab.id && <View style={[styles.indicator, { backgroundColor: tab.id === "home" ? tab.color : "#A1CEDC" }]} />}
 				</TouchableOpacity>
-			))}
+			)}
 		</View>
 	)
 }

@@ -6,14 +6,15 @@ module.exports = defineConfig([
 	expoConfig,
 	{
 		ignores: ["dist/*"],
+		plugins: ["prettier"],
 		rules: {
-			semi: ["error", "never"],
-			quotes: ["error", "double", { avoidEscape: false, allowTemplateLiterals: false }],
-			indent: ["error", "tab"],
+			"semi": ["error", "never"],
+			"quotes": ["error", "double", { "avoidEscape": false, "allowTemplateLiterals": false }],
+			"indent": ["error", "tab"],
 			"react/jsx-indent": ["error", "tab"],
 			"react/jsx-indent-props": ["error", "tab"],
 			"no-tabs": "off",
-			"no-extra-parens": ["error", "all", { "ignoreJSX": "none", "nestedBinaryExpressions": false }]
+			"no-extra-parens": ["error", "all", { "ignoreJSX": "none" }]
 		}
 	},
 ])

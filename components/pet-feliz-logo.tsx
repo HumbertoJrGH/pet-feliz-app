@@ -45,7 +45,7 @@ export function PetFelizLogo({ size = 200, showText = true }: PetFelizLogoProps)
 					</View>
 
 					{/* Texto Pet Feliz */}
-					{showText && (
+					{showText && 
 						<View style={styles.textContainer}>
 							<View style={styles.petTextContainer}>
 								<View style={styles.pawInP}>
@@ -55,7 +55,7 @@ export function PetFelizLogo({ size = 200, showText = true }: PetFelizLogoProps)
 							</View>
 							<ThemedText style={[styles.felizText, { fontSize: size * 0.12 }]}>Feliz</ThemedText>
 						</View>
-					)}
+					}
 				</View>
 			</View>
 		</View>

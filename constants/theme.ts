@@ -16,6 +16,14 @@ export const Colors = {
 		icon: "#687076",
 		tabIconDefault: "#687076",
 		tabIconSelected: tintColorLight,
+		primary: {
+			background: "#7CC2C9",
+			text: "#FFFFFF"
+		},
+		secondary: {
+			background: '#ABC24C',
+			text: "#FFFFFF"
+		}
 	},
 	dark: {
 		text: "#ECEDEE",
@@ -24,7 +32,24 @@ export const Colors = {
 		icon: "#9BA1A6",
 		tabIconDefault: "#9BA1A6",
 		tabIconSelected: tintColorDark,
+		primary: {
+			background: "#7CC2C9",
+			text: "#FFFFFF"
+		},
+		secondary: {
+			background: '#ABC24C',
+			text: "#FFFFFF"
+		}
 	},
+}
+
+export const ButtonTokens = {
+	defaultShape: "rounded",
+	roundedRadius: 12,
+	pillRadius: 999,
+	height: 48,
+	paddingHorizontal: 16,
+	textSize: 16
 }
 
 export const Fonts = Platform.select({

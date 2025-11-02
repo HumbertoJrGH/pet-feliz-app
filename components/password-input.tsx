@@ -17,11 +17,11 @@ export function PasswordInput({ icon, style, ...props }: PasswordInputProps) {
 				secureTextEntry={!isVisible}
 				{...props}
 			/>
-			{icon && (
+			{icon && 
 				<View style={styles.iconContainer}>
 					<MaterialIcons name={icon} size={24} color="#90C695" />
 				</View>
-			)}
+			}
 			<TouchableOpacity
 				style={styles.eyeIcon}
 				onPress={() => setIsVisible(!isVisible)}

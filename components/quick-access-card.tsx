@@ -17,16 +17,16 @@ export function QuickAccessCard({ icon, label, onPress, comingSoon = false }: Qu
 			activeOpacity={0.7}
 			disabled={comingSoon}>
 			<View style={styles.iconContainer}>
-				{comingSoon ? (
+				{comingSoon ? 
 					<View style={styles.comingSoonContainer}>
 						<View style={styles.grayBar} />
 						<View style={styles.badge}>
 							<Text style={styles.badgeText}>Em breve</Text>
 						</View>
 					</View>
-				) : (
+				 : 
 					icon && <MaterialIcons name={icon} size={48} color="#90C695" />
-				)}
+				}
 			</View>
 			<Text style={styles.label}>{label}</Text>
 		</TouchableOpacity>

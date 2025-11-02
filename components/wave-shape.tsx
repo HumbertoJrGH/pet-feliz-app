@@ -42,7 +42,7 @@ export function WaveShape({ height = SCREEN_HEIGHT * 0.5, color = "#A1CEDC", sho
 			<View style={[styles.divider, { backgroundColor: color }]} />
 			
 			{showDots &&
-				dots.map((dot, index) => (
+				dots.map((dot, index) => 
 					<View
 						key={index}
 						style={[
@@ -53,7 +53,7 @@ export function WaveShape({ height = SCREEN_HEIGHT * 0.5, color = "#A1CEDC", sho
 							},
 						]}
 					/>
-				))}
+				)}
 		</View>
 	)
 }
