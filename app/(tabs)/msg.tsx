@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 		height: "8%",
 		flexDirection: "row",
 		alignItems: "center",
-		gap: "5%",
+		gap: "2%",
 		backgroundColor: "rgb(10, 132, 255)",
 	},
 	userImage: {
