@@ -1,14 +1,40 @@
-import { StyleSheet, View, Text, Image } from "react-native"
+import { StyleSheet, View, Text, Image, ScrollView } from "react-native"
 import { ThemedView } from "@/components/themed-view"
 import { InputField } from "@/components/input-field"
-import Messages from "@/components/Messages"
-import { EmptyImage } from "@/components/ui/Card"
+
+const messages = [
+  { id: 1, text: 'Oi!', sender: 'me' },
+  { id: 2, text: 'Quero agendar um atendimento', sender: 'me' },
+  { id: 3, text: 'Olá! Temos um horário disponível às 17:00.', sender: 'other' },
+  { id: 4, text: 'Ótimo! Pode agendar, por favor.', sender: 'me' },
+  { id: 5, text: 'Agendamento confimado, 17:00', sender: 'other' },
+  { id: 6, text: 'Obrigado!', sender: 'me' },
+];
+
+const Messages = () => {
+  return (
+    <ScrollView style={styles.container}>
+      {messages.map((message) => (
+        <View
+          key={message.id}
+          style={[
+            styles.messageContainer,
+            message.sender === 'me' ? styles.myMessage : styles.otherMessage,
+          ]}
+        >
+          <Text style={styles.messageText}>{message.text}</Text>
+        </View>
+      ))}
+    </ScrollView>
+  );
+};
 
 export default function MsgScreen() {
 	return (
 		<ThemedView style={styles.mainContainer}>
 			<View style={styles.user}>
-				<EmptyImage
+				<Image
+					source={require("@/assets/images/default.jpg")}
 					style={styles.userImage}
 				/>
 				<Text style={styles.userName}>Atendente</Text>
