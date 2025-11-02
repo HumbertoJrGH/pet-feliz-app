@@ -1,14 +1,22 @@
 import { Image, View } from "react-native";
 
-export default function Card({ picture, children, ...props }: {
-	picture?: boolean;
-	children: React.ReactNode;
+export default function Card({ picture, children, action, ...props }: {
+	picture?: React.ReactNode
+	children: React.ReactNode
+	action?: React.ReactNode
 }) {
-	return <View style={{ borderWidth: 1, borderRadius: 20, marginTop: 16, borderColor: "#B9C2D377", backgroundColor: "#B9C2D311", overflow: "hidden" }}>
-		{picture
-			? <EmptyImage style={{ width: "100%", height: 256, opacity: 0.9 }} />
+	return <View style={{ borderWidth: 1, borderRadius: 20, borderColor: "#B9C2D377", backgroundColor: "#B9C2D311", overflow: "hidden" }}>
+		<View style={{ maxHeight: 256, overflow: "hidden" }}>
+			{picture}
+		</View>
+		<View style={{ padding: 16 }}>
+			{children}
+		</View>
+		{action
+			? <View style={{ padding: 16, paddingTop: 0 }}>
+				{action}
+			</View>
 			: <></>}
-		<View style={{ padding: 16 }}>{children}</View>
 	</View>
 }
 
