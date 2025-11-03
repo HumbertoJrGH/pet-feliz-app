@@ -1,23 +1,23 @@
-import { StyleSheet, View, ScrollView } from "react-native"
-import { ThemedText } from "@/components/themed-text"
-import { ThemedView } from "@/components/themed-view"
-import { TabPill } from "@/components/tab-pill"
-import { Link } from "expo-router"
 import { InputField } from "@/components/input-field"
 import { QuickAccessCard } from "@/components/quick-access-card"
+import { TabPill } from "@/components/tab-pill"
+import { ThemedText } from "@/components/themed-text"
+import { ThemedView } from "@/components/themed-view"
 import { EmptyImage } from "@/components/ui/Card"
+import { Link, RelativePathString } from "expo-router"
+import { ScrollView, StyleSheet, View } from "react-native"
 
 export default function HomeScreen() {
 	const cards = [
-		{ id: 1, label: "Serviços", icon: "pets", href: "cardDetails" },
+		{ id: 1, label: "Serviços", icon: "pets", href: "cardDetails" as RelativePathString },
 		{
 			id: 2,
 			label: "Produtos",
 			icon: "shopping-cart",
-			href: "cardDetails",
+			href: "cardDetails" as RelativePathString,
 		},
-		{ id: 3, label: "Fidelidade", icon: "", href: "/" },
-		{ id: 4, label: "Perfil", icon: "manage-accounts", href: "profile" },
+		{ id: 3, label: "Fidelidade", icon: "", href: "/" as RelativePathString },
+		{ id: 4, label: "Perfil", icon: "manage-accounts", href: "profile" as RelativePathString },
 	]
 
 	return (
@@ -49,7 +49,7 @@ export default function HomeScreen() {
 				</ThemedText>
 
 				<View style={styles.quickAccessRow}>
-					{cards.map((card) => (
+					{cards.map((card) => 
 						<Link key={card.id} href={card.href} asChild>
 							<QuickAccessCard
 								icon={card.icon}
@@ -57,7 +57,7 @@ export default function HomeScreen() {
 								comingSoon={card.label === "Fidelidade"}
 							/>
 						</Link>
-					))}
+					)}
 				</View>
 			</ScrollView>
 		</ThemedView>

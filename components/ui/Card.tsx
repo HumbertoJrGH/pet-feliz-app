@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { Image, View } from "react-native"
 
 export default function Card({ picture, children, action, ...props }: {
 	picture?: React.ReactNode

@@ -1,5 +1,5 @@
 import { Image } from "expo-image"
-import { Alert, FlatList, Pressable, StyleSheet, View } from "react-native"
+import { Alert, FlatList, Pressable, View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import { ThemedText } from "./themed-text"
 import Card from "./ui/Card"
@@ -69,7 +69,7 @@ export default function Internal() {
 			<ThemedText type="subtitle">
 				Card com imagem
 			</ThemedText>
-			<Card picture={<Image source={require('@/assets/images/default.jpg')} style={{ width: '100%', height: 256, opacity: 0.9 }} />} >
+			<Card picture={<Image source={require("@/assets/images/default.jpg")} style={{ width: "100%", height: 256, opacity: 0.9 }} />} >
 				<Text>Veja a imagem acima.</Text>
 			</Card>
 		</View>
@@ -81,8 +81,8 @@ export default function Internal() {
 			<Text>Use o componente Pressable.</Text>
 			<Card picture={<Pressable onPress={() => Alert.alert("Imagem apertada!", "Você apertou a imagem.")}>
 				<Image
-					source={require('@/assets/images/default.jpg')}
-					style={{ width: '100%', height: 256, opacity: 0.9 }}
+					source={require("@/assets/images/default.jpg")}
+					style={{ width: "100%", height: 256, opacity: 0.9 }}
 				/>
 			</Pressable>
 			} >
@@ -140,16 +140,3 @@ export default function Internal() {
 		/>
 	</View >
 }
-
-
-const styles = StyleSheet.create({
-	listContainer: {
-		paddingHorizontal: 0,
-		paddingVertical: 8,
-	},
-	gridItem: {
-		flex: 1,
-		marginVertical: 8,
-		// sem marginHorizontal genérica — usamos left/right para controlar bordas externas
-	}
-})

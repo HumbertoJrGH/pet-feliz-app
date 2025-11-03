@@ -3,31 +3,31 @@ import { ThemedView } from "@/components/themed-view"
 import { InputField } from "@/components/input-field"
 
 const messages = [
-  { id: 1, text: 'Oi!', sender: 'me' },
-  { id: 2, text: 'Quero agendar um atendimento', sender: 'me' },
-  { id: 3, text: 'Olá! Temos um horário disponível às 17:00.', sender: 'other' },
-  { id: 4, text: 'Ótimo! Pode agendar, por favor.', sender: 'me' },
-  { id: 5, text: 'Agendamento confimado, 17:00', sender: 'other' },
-  { id: 6, text: 'Obrigado!', sender: 'me' },
-];
+	{ id: 1, text: "Oi!", sender: "me" },
+	{ id: 2, text: "Quero agendar um atendimento", sender: "me" },
+	{ id: 3, text: "Olá! Temos um horário disponível às 17:00.", sender: "other" },
+	{ id: 4, text: "Ótimo! Pode agendar, por favor.", sender: "me" },
+	{ id: 5, text: "Agendamento confimado, 17:00", sender: "other" },
+	{ id: 6, text: "Obrigado!", sender: "me" },
+]
 
 const Messages = () => {
-  return (
-    <ScrollView style={styles.container}>
-      {messages.map((message) => (
-        <View
-          key={message.id}
-          style={[
-            styles.messageContainer,
-            message.sender === 'me' ? styles.myMessage : styles.otherMessage,
-          ]}
-        >
-          <Text style={styles.messageText}>{message.text}</Text>
-        </View>
-      ))}
-    </ScrollView>
-  );
-};
+	return (
+		<ScrollView style={styles.container}>
+			{messages.map((message) => 
+				<View
+					key={message.id}
+					style={[
+						styles.messageContainer,
+						message.sender === "me" ? styles.myMessage : styles.otherMessage,
+					]}
+				>
+					<Text style={styles.messageText}>{message.text}</Text>
+				</View>
+			)}
+		</ScrollView>
+	)
+}
 
 export default function MsgScreen() {
 	return (

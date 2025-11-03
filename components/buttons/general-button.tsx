@@ -19,7 +19,6 @@ export function Button({ title, onPress, mode = "contained", variant = "primary"
 	const palette = Colors[colorScheme ?? "light"][variant]
 	const borderRadius = ButtonTokens.roundedRadius
 
-	const backgroundColor = variant === "primary" ? palette.background : "transparent"
 	const color = variant === "primary" ? "#fff" : palette.text
 	const opacity = disabled ? 0.6 : 1
 

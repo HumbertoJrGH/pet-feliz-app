@@ -111,7 +111,7 @@ export const Colors = {
 			text: "#FFFFFF"
 		},
 		secondary: {
-			background: '#ABC24C',
+			background: "#ABC24C",
 			text: "#FFFFFF"
 		}
 	},
@@ -127,7 +127,7 @@ export const Colors = {
 			text: "#FFFFFF"
 		},
 		secondary: {
-			background: '#ABC24C',
+			background: "#ABC24C",
 			text: "#FFFFFF"
 		}
 	},
