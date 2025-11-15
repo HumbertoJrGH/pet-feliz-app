@@ -4,21 +4,30 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 
 type PasswordInputProps = TextInputProps & {
 	icon?: keyof typeof MaterialIcons.glyphMap
+	iconPosition?: "left" | "right"
 }
 
-export function PasswordInput({ icon, style, ...props }: PasswordInputProps) {
+export function PasswordInput({ icon, iconPosition = "right", style, ...props }: PasswordInputProps) {
 	const [isVisible, setIsVisible] = useState(false)
+	const isLeftIcon = icon && iconPosition === "left"
 
 	return (
 		<View style={styles.container}>
 			<TextInput
-				style={[styles.input, style]}
+				style={[
+					styles.input,
+					isLeftIcon && styles.inputWithLeftIcon,
+					style
+				]}
 				placeholderTextColor="#9BA1A6"
 				secureTextEntry={!isVisible}
 				{...props}
 			/>
 			{icon && 
-				<View style={styles.iconContainer}>
+				<View style={[
+					styles.iconContainer,
+					iconPosition === "left" && styles.iconLeft
+				]}>
 					<MaterialIcons name={icon} size={24} color="#90C695" />
 				</View>
 			}
@@ -47,11 +56,15 @@ const styles = StyleSheet.create({
 		height: 56,
 		borderWidth: 1,
 		borderColor: "#E5E5E5",
-		borderRadius: 12,
+		borderRadius: 20,
 		paddingHorizontal: 16,
 		paddingRight: 50,
 		fontSize: 16,
 		backgroundColor: "#FFFFFF",
+	},
+	inputWithLeftIcon: {
+		paddingLeft: 50,
+		paddingRight: 50,
 	},
 	iconContainer: {
 		position: "absolute",
@@ -59,6 +72,10 @@ const styles = StyleSheet.create({
 		top: 16,
 		justifyContent: "center",
 		alignItems: "center",
+	},
+	iconLeft: {
+		left: 16,
+		right: "auto",
 	},
 	eyeIcon: {
 		position: "absolute",

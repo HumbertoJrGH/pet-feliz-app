@@ -64,12 +64,7 @@ export default function TabLayout() {
 			<Tabs.Screen
 				name="components"
 				options={{
-					title: "Componentes",
-					tabBarIcon: ({ color }) => <MaterialIcons
-						name="category"
-						size={28}
-						color={color}
-					/>,
+					href: null,
 				}}
 			/>
 		</Tabs>

@@ -19,13 +19,16 @@ export function Button({ title, onPress, mode = "contained", variant = "primary"
 	const palette = Colors[colorScheme ?? "light"][variant]
 	const borderRadius = ButtonTokens.roundedRadius
 
-	const color = variant === "primary" ? "#fff" : palette.text
+	const backgroundColor = variant === "primary" ? palette.background : (mode === "outlined" ? "transparent" : palette.background)
+	const textColor = variant === "primary" ? palette.text : palette.text
 	const opacity = disabled ? 0.6 : 1
 
 	return <PaperButton
 		onPress={onPress}
 		disabled={disabled}
 		mode={mode}
+		buttonColor={mode === "contained" || mode === "elevated" ? backgroundColor : undefined}
+		textColor={textColor}
 		style={[
 			styles.button,
 			{
@@ -35,8 +38,10 @@ export function Button({ title, onPress, mode = "contained", variant = "primary"
 			},
 			style,
 		]}
+		contentStyle={styles.buttonContent}
+		labelStyle={[styles.text, { fontSize: ButtonTokens.textSize }, textStyle]}
 	>
-		<Text style={[styles.text, { color, fontSize: ButtonTokens.textSize }, textStyle]}>{title}</Text>
+		{title}
 	</PaperButton>
 }
 
@@ -46,7 +51,11 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		flexDirection: "row",
 	},
+	buttonContent: {
+		height: ButtonTokens.height,
+		paddingHorizontal: ButtonTokens.paddingHorizontal,
+	},
 	text: {
-		fontWeight: "200",
+		fontWeight: "600",
 	},
 })

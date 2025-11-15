@@ -10,11 +10,16 @@ type InputFieldProps = TextInputProps & {
 
 export function InputField({ icon, iconPosition = "right", style, ...props }: InputFieldProps) {
 	const colorScheme = useColorScheme()
+	const isLeftIcon = icon && iconPosition === "left"
 
 	return (
 		<View style={colorScheme === "dark" ? darkStyles.container : lightStyles.container}>
 			<TextInput
-				style={[colorScheme === "dark" ? darkStyles.input : lightStyles.input, style]}
+				style={[
+					colorScheme === "dark" ? darkStyles.input : lightStyles.input,
+					isLeftIcon && (colorScheme === "dark" ? darkStyles.inputWithLeftIcon : lightStyles.inputWithLeftIcon),
+					style
+				]}
 				placeholderTextColor="#9BA1A6"
 				{...props}
 			/>
@@ -47,6 +52,10 @@ const lightStyles = StyleSheet.create({
 		fontSize: 16,
 		backgroundColor: "#FFFFFF",
 	},
+	inputWithLeftIcon: {
+		paddingLeft: 50,
+		paddingRight: 16,
+	},
 	iconContainer: {
 		position: "absolute",
 		right: 16,
@@ -78,6 +87,10 @@ const darkStyles = StyleSheet.create({
 		fontSize: 16,
 		outline: "none",
 		// backgroundColor: "#FFFFFF",
+	},
+	inputWithLeftIcon: {
+		paddingLeft: 50,
+		paddingRight: 16,
 	},
 	iconContainer: {
 		position: "absolute",
