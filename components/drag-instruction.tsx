@@ -12,6 +12,7 @@ export function DragInstruction() {
 			</View>
 		</View>
 	)
+	
 }
 
 const styles = StyleSheet.create({
