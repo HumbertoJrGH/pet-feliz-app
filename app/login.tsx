@@ -13,7 +13,6 @@ export default function LoginScreen() {
 	const [password, setPassword] = useState("");
 
 	const handleLogin = () => {
-		// Simulação de login - aqui você integraria com sua API
 		if (email && password) {
 			router.replace("/(tabs)");
 		}

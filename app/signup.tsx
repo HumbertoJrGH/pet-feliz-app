@@ -22,7 +22,6 @@ export default function SignupScreen() {
 		if (password !== confirmPassword) {
 			return;
 		}
-		// Simulação de cadastro - aqui você integraria com sua API
 		router.replace("/(tabs)");
 	};
 

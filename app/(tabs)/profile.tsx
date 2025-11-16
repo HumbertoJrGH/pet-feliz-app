@@ -27,10 +27,10 @@ export default function ProfileScreen() {
 					</View>
 					<View style={styles.userInfo}>
 						<ThemedText type="title" style={styles.userName}>
-							João da Silva
+							 Usuário
 						</ThemedText>
 						<ThemedText type="subtitle" style={styles.userEmail}>
-							joao.silva@email.com
+							usuário@dev.com
 						</ThemedText>
 						<View style={styles.badgeContainer}>
 							<View style={styles.badge}>
@@ -84,13 +84,13 @@ export default function ProfileScreen() {
 						placeholder="Nome completo" 
 						icon="person" 
 						iconPosition="left" 
-						value="João da Silva" 
+						value="Usuário" 
 					/>
 					<InputField 
 						placeholder="E-mail" 
 						icon="email" 
 						iconPosition="left" 
-						value="joao.silva@email.com" 
+						value="usuario@dev.com" 
 						keyboardType="email-address"
 					/>
 					<InputField 
